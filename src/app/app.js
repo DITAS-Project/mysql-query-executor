@@ -10,7 +10,7 @@ var app = express();
 
 var port = 8080;
 
-var vdmAddr = "192.168.99.1";
+var vdmAddr = "mysqlslave";
 
 var localCon = undefined;
 
