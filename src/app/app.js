@@ -33,7 +33,7 @@ if (process.argv.length > 3) {
 var remoteCon = mysql.createConnection({
     host: vdmAddr,
     user: "root",
-    password: "password"
+    password: "root"
 });
 
 remoteCon.connect(function (err) {
@@ -49,7 +49,7 @@ app.get('/api/switchToReplica', function (req, res) {
     localCon = mysql.createConnection({
         host: "localhost",
         user: "root",
-        password: "password"
+        password: "root"
     });
 
     localCon.connect(function (err) {
