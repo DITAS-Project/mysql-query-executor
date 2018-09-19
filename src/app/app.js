@@ -10,7 +10,9 @@ var app = express();
 
 var port = 8080;
 
-var vdmAddr = "mysqlslave";
+var vdmAddr = "104.36.17.122";
+
+var replicaAddr = "213.189.63.106";
 
 var localCon = undefined;
 
@@ -33,7 +35,7 @@ if (process.argv.length > 3) {
 var remoteCon = mysql.createConnection({
     host: vdmAddr,
     user: "root",
-    password: "root"
+    password: "password"
 });
 
 remoteCon.connect(function (err) {
@@ -47,9 +49,9 @@ var server = app.listen(port, function () {
 
 app.get('/api/switchToReplica', function (req, res) {
     localCon = mysql.createConnection({
-        host: "localhost",
+        host: replicaAddr,
         user: "root",
-        password: "root"
+        password: "password"
     });
 
     localCon.connect(function (err) {
