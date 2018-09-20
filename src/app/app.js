@@ -33,6 +33,7 @@ if (process.argv.length > 3) {
 }
 
 var remoteCon = mysql.createConnection({
+	port: 30060,
     host: vdmAddr,
     user: "root",
     password: "password"
